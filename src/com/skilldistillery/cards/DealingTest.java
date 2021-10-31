@@ -26,6 +26,8 @@ public class DealingTest {
 		int howMany = sc.nextInt();
 		sc.nextLine();
 		
+		sc.close();
+		
 		List<Card> userHand = new ArrayList<>();
 		int handTotal = 0;
 		
