@@ -17,10 +17,7 @@ public class BlackjackApp {
 	private void run() {
 		Scanner input = new Scanner(System.in);
 		menuChoice(input);
-		playBlackJack(input);
-
 		input.close();
-
 	}
 
 	private void printMenu() {
@@ -31,9 +28,9 @@ public class BlackjackApp {
 		System.out.println("***********************");
 	}
 
-	private void menuChoice(Scanner input) {
+	private boolean menuChoice(Scanner input) {
 		boolean keepGoing = true;
-		do {
+		while (keepGoing) {
 			printMenu();
 			int choice = input.nextInt();
 			switch (choice) {
@@ -42,13 +39,12 @@ public class BlackjackApp {
 				break;
 			case 2:
 				System.out.println("Thank you for playing!");
-				keepGoing = false;
-				break;
+				return false;
 			default:
 				System.out.println("Invalid Selection. Please choose 1 or 2.");
 				break;
 			}
-		} while (keepGoing);
+		} return keepGoing;
 	}
 
 	private void playBlackJack(Scanner input) {
